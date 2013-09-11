@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @country.description %>
+</p>
+
+<p>
+  <b>Locale:</b>
+  <%= @country.locale %>
+</p>
+
+<p>
+  <b>Inactivated:</b>
+  <%= @country.inactivated %>
+</p>
+
+<p>
+  <b>Abbreviated:</b>
+  <%= @country.abbreviated %>
+</p>
+
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

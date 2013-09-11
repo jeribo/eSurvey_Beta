@@ -1,0 +1,9 @@
+pt-BR:
+  hello: Olá
+  site_name: "eSurvey"
+  home: "Início"
+  translation:
+    en: Inglês
+    pt-BR: Português
+  admin:
+    title: "Administração"

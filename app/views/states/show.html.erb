@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @state.description %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @state.country.description %>
+</p>
+
+<p>
+  <b>Abbreviated:</b>
+  <%= @state.abbreviated %>
+</p>
+
+
+<%= link_to 'Edit', edit_state_path(@state) %> |
+<%= link_to 'Back', root_path %>

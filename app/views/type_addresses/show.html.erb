@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @type_address.description %>
+</p>
+
+<p>
+  <b>Inactivated at:</b>
+  <%= @type_address.inactivated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_type_address_path(@type_address) %> |
+<%= link_to 'Back', type_addresses_path %>
