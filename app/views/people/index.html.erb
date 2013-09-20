@@ -1,41 +1,36 @@
-<h1>Listing people</h1>
+<%- model_class = Person.new.class -%>
+<h1> <%= t '.title', :default => model_class.model_name.human.pluralize %> </h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Federal</th>
-    <th>Regional</th>
-    <th>Social security</th>
-    <th>Birthday</th>
-    <th>Email</th>
-    <th>Inactivated at</th>
-    <th>Mothers name</th>
-    <th>Fathers name</th>
-    <th>Phone number</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id)%> </th>
+      <th><%= model_class.human_attribute_name(:name)%> </th>
+      <th><%= model_class.human_attribute_name(:birthday)%></th>
+      <th><%= model_class.human_attribute_name(:mothers_name)%></th>
+      <th><%= model_class.human_attribute_name(:fathers_name)%> </th>
+      <th><%= model_class.human_attribute_name(:phone_number)%> </th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @people.each do |person| %>
-  <tr>
-    <td><%= person.name %></td>
-    <td><%= person.federal_id %></td>
-    <td><%= person.regional_id %></td>
-    <td><%= person.social_security %></td>
-    <td><%= person.birthday %></td>
-    <td><%= person.email %></td>
-    <td><%= person.inactivated_at %></td>
-    <td><%= person.mothers_name %></td>
-    <td><%= person.fathers_name %></td>
-    <td><%= person.phone_number %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @people.each do |person| %>
+  <tbody>
+    <tr>
+      <td><%= link_to person.id, person_path(person) %></td>
+      <td><%= person.name %></td>
+      <td><%= l person.birthday, format: :default %> </td>
+      <td><%= person.mothers_name %></td>
+      <td><%= person.fathers_name %></td>
+      <td><%= person.phone_number %></td>
+      <td><%= link_to 'Show', person %></td>
+      <td><%= link_to 'Edit', edit_person_path(person) %></td>
+      <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  </tbody>
+  <% end %>
 </table>
-
 <br />
-
 <%= link_to 'New Person', new_person_path %>

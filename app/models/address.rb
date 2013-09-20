@@ -5,5 +5,5 @@ class Address < ActiveRecord::Base
   belongs_to :person
   validates :person, presence: true
   
-  attr_accessible :description, :inactivated_at, :postal_code
+  attr_accessible :description, :inactivated_at, :postal_code, :person_id
 end

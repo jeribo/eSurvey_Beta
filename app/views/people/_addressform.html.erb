@@ -1,0 +1,11 @@
+      <%= semantic_form_for [@person,@person.addresses.build], remote: true do |f| %>
+      <tr>
+        <td> <%= f.input :description %></td>
+        <td> <%= f.input :postal_code %></td>
+        <%= f.actions do %>
+        <td>
+          <%= f.action :submit, :as => :input %>
+       </td>
+       <% end %>
+      </tr>
+      <% end %>

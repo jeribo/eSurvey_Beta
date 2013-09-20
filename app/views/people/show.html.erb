@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/messages' %>
 
 <p>
   <b>Name:</b>
@@ -22,17 +22,12 @@
 
 <p>
   <b>Birthday:</b>
-  <%= @person.birthday %>
+  <%= l @person.birthday, format: :default %>
 </p>
 
 <p>
   <b>Email:</b>
   <%= @person.email %>
-</p>
-
-<p>
-  <b>Inactivated at:</b>
-  <%= @person.inactivated_at %>
 </p>
 
 <p>
@@ -49,6 +44,13 @@
   <b>Phone number:</b>
   <%= @person.phone_number %>
 </p>
+
+  	<%= render :partial => 'address' %>
+  <table>
+	<tbody> 
+		<%= render :partial => 'addressform'%>
+  	</tbody>
+ </table>
 
 
 <%= link_to 'Edit', edit_person_path(@person) %> |

@@ -2,7 +2,9 @@ ESurveyBeta::Application.routes.draw do
   resources :type_addresses
 
 
-  resources :people
+  resources :people do
+    resources :addresses
+  end
 
 
   resources :cities

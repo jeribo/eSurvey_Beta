@@ -1,0 +1,9 @@
+<% @person.addresses.each do |address| %>
+  <tbody id="address_list">
+    <tr>
+      <td><%= address.id %></td>
+      <td><%= address.description %></td>
+    </tr>
+  </tbody>
+  <% end %>
+<br />

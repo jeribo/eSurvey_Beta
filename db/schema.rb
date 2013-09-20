@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130911001613) do
+ActiveRecord::Schema.define(:version => 20130918155431) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "type_address_id"
@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(:version => 20130911001613) do
     t.datetime "inactivated_at"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "person_id"
   end
 
   add_index "addresses", ["city_id"], :name => "index_addresses_on_city_id"
+  add_index "addresses", ["person_id"], :name => "index_addresses_on_person_id"
   add_index "addresses", ["state_id"], :name => "index_addresses_on_state_id"
   add_index "addresses", ["type_address_id"], :name => "index_addresses_on_type_address_id"
 
